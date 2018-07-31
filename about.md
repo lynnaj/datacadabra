@@ -4,14 +4,19 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+My name is Lynna.  This is my blog on anything data science related.  The purpose is to share learnings.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
+I am using Jekyll to create the look of this site, and GitHub to host.
+
+
+
+You can find out more info about Jekyll at Jekyll website: 
+[jekyllrb.com](https://jekyllrb.com/)
+
+The Jekyll theme I am using is called Minima.  The source code for Minima at GitHub:
 [minima](https://github.com/jekyll/minima)
 
 You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
 [jekyll](https://github.com/jekyll/jekyll)
 
 
