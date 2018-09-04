@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "R Programming on AWS SageMaker"
+title:  "Install R Kernel on SageMaker"
 date:   2018-07-28 21:32:32 -0700
 categories: AWS SageMaker
 ---
 
-Do you want to program in R on AWS SageMaker?
+Do you want to program in R on AWS SageMaker Jupyter Notebook?
 
 Here are the steps to install R Kernel:
 
