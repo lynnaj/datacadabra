@@ -1,25 +1,31 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "R Programming on AWS SageMaker"
 date:   2018-07-28 21:32:32 -0700
-categories: jekyll update
+categories: AWS SageMaker
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Do you want to program in R on AWS SageMaker?
 
-Jekyll also offers powerful support for code snippets:
+Here are the steps to install R Kernel:
 
+1. Create a new notebook.  Choose "conda_python2".  
+
+2. Run the following Python command.  It will install an R kernel to your notebook instance.  
+The install takes approximately 5 mins to complete.
 {% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+!conda install --yes --name JupyterSystemEnv --channel r r-essentials=1.6.0
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Once the install is finished, there's a long output, which includes a list of installed R libraries.
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+![Install complete screenshot](/assets/sagemaker_r_install_done.jpg)
+
+3. Close the notebook instance & reopen the notebook from SageMaker console.
+
+4. Now, you should see R available as one of many notebooks options.
+
+Here is my source: [AWS SageMaker Docs][rinstallsagemaker-docs].  
+AWS' instructions are a bit different.  They suggest executing the above code (without the exclamation sign) in terminal, instead of a notebook.
+
+[rinstallsagemaker-docs]: https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-add-external.html
