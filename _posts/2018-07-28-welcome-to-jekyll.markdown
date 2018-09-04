@@ -19,7 +19,7 @@ The install takes approximately 5 mins to complete.
 
 Once the install is finished, there's a long output, which includes a list of installed R libraries.
 
-![Install complete screenshot](/assets/sagemaker_r_install_done.jpg)
+![Install complete screenshot](https://lynnaj.github.io/datacadabra/assets/sagemaker_r_install_done.jpg)
 
 3. Close the notebook instance & reopen the notebook from SageMaker console.
 
