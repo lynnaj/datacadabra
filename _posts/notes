@@ -1,0 +1,57 @@
+NOTES on creating a variable in SQL
+
+DECLARE
+v_lynna varchar2(20) default 'HELLO';
+begin
+select distinct platform
+into v_lynna
+from orders
+where platform = 1;
+
+select * from orders
+where platform = v_lynna;
+end;
+
+
+
+NOTES job market paper
+https://economics.harvard.edu/files/economics/files/tenruleswriting.pdf
+
+NOTES markdown
+https://www.markdownguide.org/extended-syntax/
+
+
+I found this great resource for publishing ipython notebooks on jekyll:
+https://cduvallet.github.io/posts/2018/03/ipython-notebooks-jekyll
+
+And this is just my simple test.  I used a local ipython notebook to do a simple addition and then I'm publishing the notebook per the blog's instructions:
+
+```python
+x = 5
+```
+
+# This is just a test python notebook
+
+
+```python
+y = 10
+```
+
+
+```python
+x + y
+```
+
+
+
+
+    15
+
+
+
+
+```python
+
+```
+
+
