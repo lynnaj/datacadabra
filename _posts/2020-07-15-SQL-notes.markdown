@@ -45,7 +45,7 @@ ORDER BY star_rating
 {% endhighlight %}
 
 
-<h4>MULTIJOIN on Attribute Table:</h4>
+<h4>MULTIJOIN on an Attribute Table:</h4>
 {% highlight SQL %}
 SELECT O.orderID, S.attrValue as State, C.attrValue as City
 FROM order O, attr S, attr C
