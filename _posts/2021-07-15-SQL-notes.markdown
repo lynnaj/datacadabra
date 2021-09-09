@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "My brief notes on SQL"
+date:   2021-07-15 12:32:32 -0700
+categories: code notes
+---
+
+<h1>This is a cheatsheet for SQL!</h1>
+
+<h4>General format of SQL:</h4>
+{% highlight SQL %}
+SELECT col1, col2, COUNT(col3) AS cnt_col3
+FROM table1 t1
+JOIN table2 t2
+ON t1.col2 = t2.col1
+GROUP BY col1, col2
+HAVING COUNT(col3) > 10
+{% endhighlight %}
+
+<h4>WINDOW FUNCTION:</h4>
+{% highlight SQL %}
+SELECT * 
+FROM(SELECT user_id, inv_id, paid_id,
+	RANK() OVER (PARTITION BY user_id ORDER BY paid_at ASC) AS order_number
+	FROM table.orders) AS subquery
+WHERE order_number = 1)
+{% endhighlight %}
+
+<h4>Example of another window function:</h4>
+{% highlight SQL %}
+SUM() OVER (PARTIION BY user_id ORDER BY date_col) AS running_total
+{% endhighlight %}
+
+CASE WHEN for creating "buckets":
+{% highlight SQL %}
+SELECT COUNT(ID) AS COUNT,
+	(CASE WHEN stars BETWEEN 0 and 0.9 THEN '0'
+		WHEN stars BETWEEN 1 and 1.9 THEN '1-2'
+		ELSE 'other'
+		END) AS star_rating
+FROM business
+WHERE city = 'Avon'
+GROUP BY star_rating
+ORDER BY star_rating
+{% endhighlight %}
+
+
+<h4>MULTIJOIN on an Attribute Table:</h4>
+{% highlight SQL %}
+SELECT O.orderID, S.attrValue as State, C.attrValue as City
+FROM order O, attr S, attr C
+WHERE O.orderID = S.orderID
+AND O.orderID = C.orderID
+AND S.attrName = 'State'
+AND C.attrName = 'City'
+{% endhighlight %}
+
+<h4>How I've dealt with NULLS:</h4>
+To view nulls: 
+{% highlight SQL %}
+SELECT * FROM table WHERE name is NULL
+{% endhighlight %}
+
+To replace nulls with zeros: 
+{% highlight SQL %}
+SELECT COALESCE(table.business_count, 0) AS business_count FROM table
+{% endhighlight %}
+
+<h4>Deleting duplicates:</h4>
+Create ROW_ID to distinguish the rows
+{% highlight SQL %}
+DELETE FROM YourTable
+WHERE rowid not in (
+	SELECT MIN(rowid) 
+	FROM YourTable 
+	GROUP BY hash, d)
+{% endhighlight %}
+
+<h4>Example of using variable within a query, availble with MS SQL:</h4>
+{% highlight SQL %}
+DECLARE @name as VARCHAR(10)
+SET name = 'name'
+SELECT * FROM table WHERE name=@name
+{% endhighlight %}
+
+
+<h4>Ways subqueries can be used:</h4>
+1) as a filter
+{% highlight SQL %}
+SELECT cust_ID, cust_name, region
+FROM customer
+WHERE cust_ID in (SELECT cust_ID
+				FROM orders
+				WHERE total_inv > 1000)
+{% endhighlight %}
+
+2) as a calculation
+{% highlight SQL %}
+SELECT employee_id, first_name, last_name, salary,
+			(SELECT ROUND(AVG(salary), 0)
+			FROM employees) average_salary,
+    		salary - (SELECT ROUND(AVG(salary), 0)
+    				FROM employees) difference
+FROM employees
+ORDER BY first_name , last_name
+{% endhighlight %}
+
+
+3) to aggregate in multiple stages
+{% highlight SQL %}
+SELECT LEFT(sub.date, 2) AS cleaned_month,
+       sub.day_of_week,
+       AVG(sub.incidents) AS average_incidents
+FROM (
+		SELECT day_of_week,
+               date,
+               COUNT(incidnt_num) AS incidents
+        FROM tutorial.sf_crime_incidents_2014_01
+        GROUP BY 1,2) sub
+GROUP BY 1,2
+ORDER BY 1,2
+{% endhighlight %}
+
+

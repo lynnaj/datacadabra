@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "My brief notes on SQL"
-date:   2021-07-15 12:32:32 -0700
+title:  "SQL notes part 2"
+date:   2021-08-20 12:32:32 -0700
 categories: code notes
 ---
 
-<h1>This is a cheatsheet for SQL!</h1>
+<h1>This is a cheatsheet for SQL String & Date manipulations</h1>
 
 <h4>General format of SQL:</h4>
 {% highlight SQL %}
@@ -67,8 +67,8 @@ SELECT COALESCE(table.business_count, 0) AS business_count FROM table
 {% endhighlight %}
 
 <h4>Deleting duplicates:</h4>
-{% highlight SQL %}
 Create ROW_ID to distinguish the rows
+{% highlight SQL %}
 DELETE FROM YourTable
 WHERE rowid not in (
 	SELECT MIN(rowid) 

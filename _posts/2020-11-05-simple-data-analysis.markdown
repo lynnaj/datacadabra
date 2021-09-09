@@ -14,7 +14,8 @@ Let's say you sell a cool widget to tons of customers online and sales went up t
 * Customer type (older vs. new, or other categories depending on your business model)
 * Product type if there are more than 1 product
 
-2. Look at growth percentage by each of the categories for each of the above features.  In the below example, I will analysis sales growth by platform.
+
+2. Look at growth percentage by each of the categories for each of the above features.  In the below example, I will analyze sales growth by platform.
 
 3. Repeat the same analysis for other features.  In the case of location, you may have to join with Customers table to get the location data.  
 
