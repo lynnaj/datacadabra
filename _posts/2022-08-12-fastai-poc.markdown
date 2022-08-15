@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "fastai POC"
-date:   2021-08-12 12:32:32 -0700
+date:   2022-08-12 12:32:32 -0700
 categories: deep learning
 ---
 
