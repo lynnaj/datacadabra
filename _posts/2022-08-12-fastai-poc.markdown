@@ -7,9 +7,9 @@ categories: deep learning
 
 <h1>Learning FastAI</h1>
 
-I wanted to make a fastai POC using streamlit.  Here it is, [https://lynnaj-unicorn-versus-pegasus-app-gfm5y7.streamlitapp.com/](https://lynnaj-unicorn-versus-pegasus-app-gfm5y7.streamlitapp.com/)
+I wanted to make a fastai POC using Streamlit.  Here it is, [https://lynnaj-unicorn-versus-pegasus-app-gfm5y7.streamlitapp.com/](https://lynnaj-unicorn-versus-pegasus-app-gfm5y7.streamlitapp.com/)
 
-It's a simple data app that can take a jpg url (make sure it has suffix .jpg), and output a prediction based on a pytorch deep learning model that was trained on 400 photos.
+It's a simple data app that can take a jpeg URL (make sure it has suffix .jpg), and output a prediction based on a Pytorch deep learning model that was trained on 400 photos.
 
 List of URLs you can use to try:
 https://img.huffingtonpost.com/asset/5f4517881f00008b04aa9c4b.jpeg
