@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NLU final project demonstrating experimental design"
-date:   2023-11-30 12:32:32 -0700
+date:   2023-11-19 12:32:32 -0700
 categories: Experimental Design
 ---
 
