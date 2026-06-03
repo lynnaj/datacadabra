@@ -5,6 +5,8 @@ date:   2022-08-12 12:32:32 -0700
 categories: deep learning
 ---
 
+The below app is outdated.  The shell of the app renders, but the image prediction model fails.
+ 
 <h1>Learning FastAI</h1>
 
 I wanted to make a fastai POC using Streamlit.  Here it is, [https://lynnaj-unicorn-versus-pegasus-app-gfm5y7.streamlitapp.com/](https://lynnaj-unicorn-versus-pegasus-app-gfm5y7.streamlitapp.com/)

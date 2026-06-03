@@ -2,7 +2,7 @@
 layout: post
 title:  "Simple Content Tagger with a Huggingface Transformer Model"
 date:   2026-06-02 12:00:00 -0700
-categories: Machine Learning
+categories: Artificial Intelligence
 ---
 
 I built a zero-shot content tagger as a quick proof of concept using `facebook/bart-large-mnli`. Try it here: [Content Tagger on Hugging Face Spaces](https://huggingface.co/spaces/lynnaj/content_tagger)
